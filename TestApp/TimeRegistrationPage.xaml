@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:TestApp.Maui.ViewModels"
+             x:DataType="viewmodel:TimeRegistrationViewModel"
+             x:Class="TestApp.Maui.TimeRegistrationPage">
+    <ContentPage.ToolbarItems>
+      <ToolbarItem Text="New" Command="{Binding AddRegistrationCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ListView
+            x:Name="timeRegistrationsListView"
+            IsRefreshing="{Binding Loading}"
+            IsPullToRefreshEnabled="true"
+            HasUnevenRows="True"
+            ItemsSource="{Binding TimeRegistrations}"
+            RefreshCommand="{Binding LoadCommand}"
+        >
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="viewmodel:TimeRegistrationCellViewModel">
+                    <TextCell x:Name="timeRegistrationCell"
+                              Text="{Binding TimeRange}"
+                              Detail="{Binding Duration}"
+                              DetailColor="{DynamicResource TextSecondaryColor}">
+                        <TextCell.ContextActions>
+                            <MenuItem
+                                BindingContext="{Binding Source={x:Reference timeRegistrationsListView}, Path=BindingContext}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TimeRegistrationViewModel}}, Path= DeleteTimeRegistrationCommand}"
+                                CommandParameter="{Binding Source={x:Reference timeRegistrationCell}, Path=BindingContext}"
+                                Text="Delete"
+                                IsDestructive="true"
+                            />
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

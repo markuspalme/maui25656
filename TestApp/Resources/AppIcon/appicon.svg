@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="180"
+   height="180"
+   viewBox="0 0 179.99999 179.99999"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   inkscape:export-filename="C:\Users\marku\Source\Repos\TestApp\TestApp\TestApp.iOS\Resources\Icon76png"
+   inkscape:export-xdpi="38"
+   inkscape:export-ydpi="38"
+   sodipodi:docname="App Logo.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="209.59007"
+     inkscape:cy="129.04452"
+     inkscape:document-units="px"
+     inkscape:current-layer="g4157"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1278"
+     inkscape:window-height="1368"
+     inkscape:window-x="1273"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-872.36227)">
+    <g
+       transform="matrix(6.2554015,0,0,-6.2554015,191.05729,854.72842)"
+       inkscape:label="ink_ext_XXXXXX"
+       id="g4155">
+      <g
+         transform="matrix(0.02659404,0,0,0.02659404,-27.537259,-29.72904)"
+         id="g4157">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:7.61581707;stroke-opacity:1"
+           id="rect4214"
+           width="1074.3983"
+           height="1074.3983"
+           x="-109.20656"
+           y="-1008.0751"
+           transform="scale(1,-1)" />
+        <g
+           id="g4209"
+           transform="matrix(0.90526744,0,0,0.90526744,31.611432,45.815792)">
+          <path
+             d="m 889.74337,-45.072205 -471.937,471.933285 -467.184001,0 471.906001,-471.945004 467.215,0.01172"
+             style="fill:#64a5ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path4159"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 422.56037,948.81108 -471.938001,-471.938 467.215001,-0.012 238.316,238.34 -233.59,233.61 -0.003,0"
+             style="fill:#004bff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path4161"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 457.92337,984.16608 233.586,-233.609 233.59,233.609 -467.176,0"
+             style="fill:#004bff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path4163"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
