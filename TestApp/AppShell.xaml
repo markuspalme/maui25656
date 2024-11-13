@@ -6,11 +6,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:TestApp.Maui"
     FlyoutBehavior="Disabled"
-    Title="Project Account"
-    TabBarForegroundColor="#004bff">
-    <TabBar x:Name="TabBar">
-        <Tab  x:Name="TestTab" Title="Test" >
-            <ShellContent ContentTemplate="{DataTemplate local:TimeRegistrationPage}" />
-        </Tab>
-    </TabBar>
+    Title="Test">
+    <ShellContent ContentTemplate="{DataTemplate local:TimeRegistrationPage}" />
 </Shell>

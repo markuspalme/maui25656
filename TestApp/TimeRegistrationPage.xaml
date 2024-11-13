@@ -12,15 +12,13 @@
     <ContentPage.Content>
         <ListView
             x:Name="timeRegistrationsListView"
-            IsRefreshing="{Binding Loading}"
             IsPullToRefreshEnabled="true"
             ItemsSource="{Binding Rows}"
             RefreshCommand="{Binding LoadCommand}"
         >
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="viewmodel:RowModel">
-                    <TextCell x:Name="timeRegistrationCell"
-                              Text="{Binding Text}">
+                    <TextCell x:Name="timeRegistrationCell" Text="{Binding Text}">
                         <TextCell.ContextActions>
                             <MenuItem
                                 BindingContext="{Binding Source={x:Reference timeRegistrationsListView}, Path=BindingContext}"

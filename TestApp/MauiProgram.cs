@@ -19,7 +19,6 @@ public static class MauiProgram
             });
 
         builder.Services.AddTransient<AppShell>();
-        builder.Services.AddTransient<AppShellViewModel>();
 
         builder.Services.AddTransient<TimeRegistrationViewModel>();
         builder.Services.AddTransient<TimeRegistrationPage>();
