@@ -6,8 +6,8 @@ namespace TestApp.Maui.ViewModels;
 
 public partial class TimeRegistrationViewModel : ObservableObject
 {
-    private int latestId = 1;
-    private readonly List<TimeRegistration> data = new();
+    private int latestId;
+    private readonly List<RowModel> data = new();
 
     [ObservableProperty] private bool loading;
 
@@ -16,28 +16,24 @@ public partial class TimeRegistrationViewModel : ObservableObject
         LoadCommand.Execute(null);
     }
 
-    public ObservableCollection<TimeRegistrationCellViewModel> TimeRegistrations { get; } = new();
+    public ObservableCollection<RowModel> Rows { get; } = new();
 
     [RelayCommand]
-    private async Task AddRegistration()
+    private async Task Add()
     {
         await Task.Delay(100);
 
-        var from = Random.Shared.Next(1, 10);
-
-        data.Add(new TimeRegistration
+        data.Add(new RowModel
         {
             Id = latestId++,
-            Date = DateTime.Now,
-            From = from.ToString("00") + ":00",
-            To = (from + 1).ToString("00") + ":00"
+            Text = latestId.ToString("0000000")
         });
 
         LoadCommand.Execute(null);
     }
 
     [RelayCommand]
-    private async Task DeleteTimeRegistration(TimeRegistrationCellViewModel item)
+    private async Task Delete(RowModel item)
     {
         Loading = true;
 
@@ -53,12 +49,12 @@ public partial class TimeRegistrationViewModel : ObservableObject
     private async Task Load()
     {
         Loading = true;
-        TimeRegistrations.Clear();
+        Rows.Clear();
 
         await Task.Delay(100);
-        foreach (var r in data.Select(TimeRegistrationCellViewModel.FromModel))
+        foreach (var r in data)
         {
-            TimeRegistrations.Add(r);
+            Rows.Add(r);
         }
 
         Loading = false;

@@ -6,7 +6,7 @@
              x:DataType="viewmodel:TimeRegistrationViewModel"
              x:Class="TestApp.Maui.TimeRegistrationPage">
     <ContentPage.ToolbarItems>
-      <ToolbarItem Text="New" Command="{Binding AddRegistrationCommand}" />
+      <ToolbarItem Text="New" Command="{Binding AddCommand}" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
@@ -14,19 +14,17 @@
             x:Name="timeRegistrationsListView"
             IsRefreshing="{Binding Loading}"
             IsPullToRefreshEnabled="true"
-            ItemsSource="{Binding TimeRegistrations}"
+            ItemsSource="{Binding Rows}"
             RefreshCommand="{Binding LoadCommand}"
         >
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="viewmodel:TimeRegistrationCellViewModel">
+                <DataTemplate x:DataType="viewmodel:RowModel">
                     <TextCell x:Name="timeRegistrationCell"
-                              Text="{Binding TimeRange}"
-                              Detail="{Binding Duration}"
-                              DetailColor="{DynamicResource TextSecondaryColor}">
+                              Text="{Binding Text}">
                         <TextCell.ContextActions>
                             <MenuItem
                                 BindingContext="{Binding Source={x:Reference timeRegistrationsListView}, Path=BindingContext}"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TimeRegistrationViewModel}}, Path= DeleteTimeRegistrationCommand}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TimeRegistrationViewModel}}, Path= DeleteCommand}"
                                 CommandParameter="{Binding Source={x:Reference timeRegistrationCell}, Path=BindingContext}"
                                 Text="Delete"
                                 IsDestructive="true"
