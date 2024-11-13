@@ -7,15 +7,14 @@ namespace TestApp.Maui.ViewModels;
 public partial class TimeRegistrationViewModel : ObservableObject
 {
     private int latestId = 1;
-    private List<Shared.Model.TimeRegistration> data = new();
+    private readonly List<TimeRegistration> data = new();
+
+    [ObservableProperty] private bool loading;
 
     public TimeRegistrationViewModel()
     {
-        loading = true;
         LoadCommand.Execute(null);
     }
-
-    [ObservableProperty] private bool loading;
 
     public ObservableCollection<TimeRegistrationCellViewModel> TimeRegistrations { get; } = new();
 
@@ -26,7 +25,7 @@ public partial class TimeRegistrationViewModel : ObservableObject
 
         var from = Random.Shared.Next(1, 10);
 
-        data.Add(new Shared.Model.TimeRegistration
+        data.Add(new TimeRegistration
         {
             Id = latestId++,
             Date = DateTime.Now,

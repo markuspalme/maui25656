@@ -1,58 +1,44 @@
 using System.Globalization;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace TestApp.Maui.ViewModels;
 
-public class TimeRegistrationCellViewModel
+public partial class TimeRegistrationCellViewModel : ObservableObject
 {
-    public static TimeRegistrationCellViewModel FromModel(Shared.Model.TimeRegistration model)
+    public static TimeRegistrationCellViewModel FromModel(TimeRegistration model)
     {
         var vm = new TimeRegistrationCellViewModel
         {
             Date = model.Date,
-            Index = model.Index,
             TimeRange = model.From + (!string.IsNullOrWhiteSpace(model.To) ? (" - " + model.To) : ""),
             Id = model.Id,
             FromTime = model.From,
             ToTime = model.To
         };
 
-        if (!string.IsNullOrWhiteSpace(model.To) && !string.IsNullOrWhiteSpace(model.From))
-        {
-            var from = TimeSpan.ParseExact(model.From, "hh\\:mm", CultureInfo.InvariantCulture);
-            var to = TimeSpan.ParseExact(model.To, "hh\\:mm", CultureInfo.InvariantCulture);
+        var from = TimeSpan.ParseExact(model.From, "hh\\:mm", CultureInfo.InvariantCulture);
+        var to = TimeSpan.ParseExact(model.To, "hh\\:mm", CultureInfo.InvariantCulture);
 
-            var duration = to - from;
+        var duration = to - from;
 
-            if (duration.TotalHours < 0)
-            {
-                duration = duration.Add(new TimeSpan(24, 0, 0));
-            }
-
-            vm.Duration = duration.ToString("hh\\:mm");
-        }
-        else
-        {
-            vm.Duration = "Unvollständiger Eintrag";
-        }
+        vm.Duration = duration.ToString("hh\\:mm");
 
         return vm;
     }
 
     #region Properties
 
-    public string TimeRange { get; set; }
+    [ObservableProperty] private string timeRange;
 
-    public string Duration { get; set; }
+    [ObservableProperty] private string duration;
 
-    public DateTime Date { get; set; }
+    [ObservableProperty] private DateTime date;
 
-    public int? Id { get; set; }
+    [ObservableProperty] private int? id;
 
-    public int Index { get; set; }
+    [ObservableProperty] private string fromTime;
 
-    public string FromTime { get; set; }
-
-    public string ToTime { get; set; }
+    [ObservableProperty] private string toTime;
 
     #endregion
 }

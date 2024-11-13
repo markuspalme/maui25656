@@ -14,7 +14,6 @@
             x:Name="timeRegistrationsListView"
             IsRefreshing="{Binding Loading}"
             IsPullToRefreshEnabled="true"
-            HasUnevenRows="True"
             ItemsSource="{Binding TimeRegistrations}"
             RefreshCommand="{Binding LoadCommand}"
         >
